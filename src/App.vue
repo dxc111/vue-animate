@@ -2,6 +2,7 @@
   <div id="app">
     <router-link to="/">home</router-link>
     <router-link to="/parallax">parallax</router-link>
+    <router-link to="/fabric">fabric</router-link>
     <router-view/>
   </div>
 </template>

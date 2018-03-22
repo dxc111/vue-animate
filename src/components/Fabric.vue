@@ -1,0 +1,27 @@
+<template>
+  <canvas id="canvas" width="300" height="300"></canvas>
+</template>
+
+<script>
+import {fabric} from 'fabric'
+
+export default {
+  name: 'Fabric',
+  mounted () {
+    const canvas = new fabric.Canvas('canvas')
+
+    const rect = new fabric.Rect({
+      top: 100,
+      left: 100,
+      width: 60,
+      height: 70,
+      fill: 'red'
+    })
+    canvas.add(rect)
+  }
+}
+</script>
+
+<style scoped>
+
+</style>
