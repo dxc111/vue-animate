@@ -22,6 +22,11 @@ export default new Router({
       path: '/fabric',
       name: 'Fabric',
       component: getComponent('Fabric')
+    },
+    {
+      path: '/paper',
+      name: 'Paper',
+      component: getComponent('Paper')
     }
   ]
 })
