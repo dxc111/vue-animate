@@ -69,8 +69,9 @@
         this.bind();
       }
     },
-    unmounted () {
-      BindingX.unbind({
+    beforeDestroy () {
+      console.info(bindingx)
+      bindingx.unbind({
         eventType: 'pan'
       })
     }
