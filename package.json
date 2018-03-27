@@ -24,6 +24,7 @@
     "swiper": "^4.2.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
+    "weex-bindingx": "^0.0.21",
     "wowjs": "^1.1.3"
   },
   "devDependencies": {

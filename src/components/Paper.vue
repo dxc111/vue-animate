@@ -28,7 +28,6 @@ export default {
       strokeCap: 'round'
     })
     var start = new paper.Point(paper.view.center.x / 10, paper.view.center.y)
-    console.info(start)
     for (var i = 0; i < points; i++) {
       path.add(new paper.Point((start.x + i * length), start.y))
     }

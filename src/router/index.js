@@ -27,6 +27,11 @@ export default new Router({
       path: '/paper',
       name: 'Paper',
       component: getComponent('Paper')
+    },
+    {
+      path: '/bindX',
+      name: 'BindX',
+      component: getComponent('BindX')
     }
   ]
 })

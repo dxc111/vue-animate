@@ -4,6 +4,7 @@
     <router-link to="/parallax">parallax</router-link>
     <router-link to="/fabric">fabric</router-link>
     <router-link to="/paper">paper</router-link>
+    <router-link to="/bindX">BindX</router-link>
     <router-view/>
   </div>
 </template>
