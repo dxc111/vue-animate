@@ -1,7 +1,7 @@
 <template>
-    <scroller class="scroller" >
+    <div class="scroller" >
         <div :ref="'box'" class="box" @touchstart="ontouchstart"  @appear="onappear"></div>
-    </scroller>
+    </div>
 </template>
 
 <style scoped>
@@ -9,15 +9,13 @@
         flex: 1;
     }
     .box {
-        border-width: 2px;
-        border-style: solid;
-        border-color: #BBBBBB;
-        width: 250px;
-        height: 250px;
-        margin-top: 250px;
-        margin-left: 250px;
-        background-color: #EEEEEE;
-        margin-bottom:500px;
+      border-width: 2px;
+      border-style: solid;
+      border-color: #BBBBBB;
+      width: 250px;
+      height: 250px;
+      margin: 10px auto;
+      background-color: #EEEEEE;
     }
 </style>
 
@@ -70,6 +68,11 @@
       ontouchstart (event) {
         this.bind();
       }
+    },
+    unmounted () {
+      BindingX.unbind({
+        eventType: 'pan'
+      })
     }
   }
 </script>
