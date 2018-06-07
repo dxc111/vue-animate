@@ -1,6 +1,6 @@
 <template>
 <div>
-  <div id="hello"></div>
+  <div id="hello" ref="echart"></div>
   <div class="swiper-container">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
@@ -17,53 +17,94 @@
 
 <script>
 import echarts from 'echarts'
-import Swiper from 'swiper'
-import 'swiper/dist/css/swiper.min.css'
+/* import Swiper from 'swiper'
+import 'swiper/dist/css/swiper.min.css' */
 
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      datas: {},
+      options: {}
     }
   },
-  computed: {
-    options () {
-      return {
-        title: {
-          text: 'ECharts 入门示例'
+  methods: {
+  },
+  created () {
+    const that = this
+    that.datas = {
+      title: '',
+      dataset: {
+        '衬衫': {
+          id: '001',
+          data: 5
         },
-        tooltip: {},
-        xAxis: {
-          data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+        '羊毛衫': {
+          id: '002',
+          data: 20
         },
-        yAxis: {},
-        series: [
-          {
-            name: '销量',
-            type: 'bar',
-            data: [5, 20, 36, 10, 10, 20]
-          }
-        ]
+        '雪纺衫': {
+          id: '003',
+          data: 26
+        },
+        '裤子': {
+          id: '004',
+          data: 10
+        },
+        '高跟鞋': {
+          id: '005',
+          data: 10
+        },
+        '袜子': {
+          id: '006',
+          data: 20
+        }
       }
     }
+    const options = {
+      title: {
+        text: '',
+        left: 'center'
+      },
+      tooltip: {},
+      xAxis: {
+        data: []
+      },
+      yAxis: {
+        type: 'value',
+        data: []
+      },
+      series: {
+        name: '',
+        type: '',
+        data: []
+      }
+    }
+    options.title.text = 'Ehcarts'
+    options.series.name = '销量'
+    options.series.type = 'bar'
+    for (var key in that.datas.dataset) {
+      options.xAxis.data.push(key)
+      options.series.data.push(that.datas.dataset[key].data)
+    }
+    that.options = options
   },
   mounted () {
-    const myChart = echarts.init(document.getElementById('hello'))
+    const myChart = echarts.init(this.$refs.echart)
+    const that = this
     // 绘制图表
-    console.info(myChart)
     myChart.setOption(this.options)
     myChart.on('click', function (params) {
-      params.color = '#1E71B1'
-      console.info(params)
+      console.info(`${params.name} ==> ${params.value} -- id: ${that.datas.dataset[params.name].id}`)
+      // console.info(that.datas.dataset[params.name].id)
     })
     // eslint-disable-next-line
-    var mySwiper = new Swiper('.swiper-container', {
+   /*  var mySwiper = new Swiper('.swiper-container', {
       pagination: {
         el: '.swiper-pagination',
         type: 'fraction'
       }
-    })
+    }) */
   }
 }
 </script>

@@ -32,6 +32,16 @@ export default new Router({
       path: '/bindX',
       name: 'BindX',
       component: getComponent('BindX')
+    },
+    {
+      path: '/echarts',
+      name: 'Echarts',
+      component: getComponent('Echarts')
+    },
+    {
+      path: '/video',
+      name: 'Video',
+      component: getComponent('Video')
     }
   ]
 })

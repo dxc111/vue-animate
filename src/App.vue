@@ -5,7 +5,9 @@
     <router-link to="/fabric">fabric</router-link>
     <router-link to="/paper">paper</router-link>
     <router-link to="/bindX">BindX</router-link>
-    <router-view/>
+    <router-link to="/echarts">Echarts</router-link>
+    <router-link to="/video">Video</router-link>
+    <keep-alive><router-view/></keep-alive>
   </div>
 </template>
 
